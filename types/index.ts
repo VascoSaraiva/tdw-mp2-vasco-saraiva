@@ -67,6 +67,10 @@ export interface PlaceTextSearchResult {
   place_id: string;
 }
 
+export interface StarsRatingProps {
+  rating: number;
+}
+
 export interface FormProps {
   numberOfPlaces: number;
   setShowForm: React.Dispatch<SetStateAction<boolean>>;
