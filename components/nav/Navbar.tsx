@@ -5,13 +5,13 @@ import UserItem from "./UserItem";
 const Navbar = () => {
 
   return (
-    <nav>
+    <div className="navbar">
       <MenuItem />
-      <div className="flex items-center justify-between gap-[16px]">
+      <div className="flex items-center justify-between gap-[18px]">
         <SearchItem />
         <UserItem />
       </div>
-    </nav>
+    </div>
   );
 };
 

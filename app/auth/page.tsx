@@ -1,6 +1,6 @@
 'use client'
 
-import SignInButton from "@/components/authentication/signInButton"
+import SignInButton from "@/components/auth/signInButton"
 import { useEffect, useState } from "react"
 import { ClientSafeProvider, LiteralUnion, getProviders, useSession } from "next-auth/react"
 import { signOut } from "next-auth/react"
@@ -32,7 +32,7 @@ const Page = () => {
             {providers ? Object.values(providers).map(provider => (
                 <SignInButton key={provider.id} providerId={provider.id} />
             )) :
-                <button className="normalButton w-full mt-6 opacity-70">Loading...</button>
+                <button className="normalButton w-full opacity-70">Loading...</button>
             }
         </div>
     )

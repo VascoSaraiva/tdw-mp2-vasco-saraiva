@@ -13,7 +13,6 @@ const MenuItem = () => {
 
     const { data: session } = useSession()
 
-
     return (
         <Menu>
             <Menu.Button className="focus:outline-none flex items-center">
@@ -30,7 +29,7 @@ const MenuItem = () => {
                 </Menu.Item>
 
                 <Menu.Item>
-                    <Link href={session ? '/tourCreation' : '/login'} className="flex items-center gap-2">
+                    <Link href={session ? '/create' : '/auth'} className="flex items-center gap-2">
                         <AutoAwesomeIcon className="text-indigo-500" />
                         Create new tour
                     </Link>
@@ -39,7 +38,7 @@ const MenuItem = () => {
                 <Menu.Item>
                     {session ?
                         <button onClick={() => signOut()} className='text-rose-500 flex'>Sign out -{'>'}</button> :
-                        <Link href={'/login'} className="normalButton">Login or Register</Link>
+                        <Link href={'/auth'} className="normalButton">Login or Register</Link>
                     }
                 </Menu.Item>
 

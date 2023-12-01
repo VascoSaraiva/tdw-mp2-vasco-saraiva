@@ -16,7 +16,7 @@ const UserItem = () => {
                 {session ?
                     <Image className="rounded-full" src={session?.user?.image as string} width={35} height={35} alt="User image" />
                     :
-                    <Link href={'/login'}>
+                    <Link href={'/auth'}>
                         <PersonOutlineIcon />
                     </Link>
                 }

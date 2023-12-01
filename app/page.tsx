@@ -1,15 +1,24 @@
-'use client'
+import Post from '@/components/posts/PostCard'
+import { mockData } from '@/constants'
+import React, { ReactElement } from 'react';
 
-import { useSession } from 'next-auth/react'
 
 export default function Home() {
 
-  const { data: session } = useSession()
+  let content : ReactElement[] = [];
 
-  console.log(session)
+  if (mockData.length > 0) {
+    mockData.map(data => {
+      content.push(
+        <Post data={data} />
+      )
+    })
+  }
+
+
   return (
-    <div>
-      
+    <div className='mt-6 flex flex-col gap-6'>
+      {content}
     </div>
   )
 }
