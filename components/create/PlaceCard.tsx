@@ -11,9 +11,16 @@ const PlaceCard = ({ id }: { id: string }) => {
 
   useEffect(() => {
     const fetchPlaceDetails = async () => {
-      const response = await fetch(
-        `http://localhost:3000/api/placeDetails/${id}`,
-      );
+
+      let link;
+
+      if (process.env.VERCEL_URL) {
+        link = "https://" + process.env.VERCEL_URL + `api/placeDetails/${id}`;
+      } else {
+        link = `http://localhost:3000/api/placeDetails/${id}`;
+      }
+
+      const response = await fetch(link);
       const data = await response.json();
       setData(data);
       console.log(data);
