@@ -60,7 +60,7 @@ export const mockData = [
     ],
     places: [
       {
-        place_id: 1,
+        place_id: '1',
         name: "Museu",
         editorial_summary: "Muito bonito",
         user_ratings_total: 2539,
@@ -96,7 +96,7 @@ export const mockData = [
     ],
     places: [
       {
-        place_id: 1,
+        place_id: '1',
         name: "Museu",
         editorial_summary: "Muito bonito",
         user_ratings_total: 2539,
