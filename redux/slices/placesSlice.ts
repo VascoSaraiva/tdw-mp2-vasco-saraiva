@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const list : string[] = []
+
 export const placesSlice = createSlice({
   name: "place",
   initialState: {
-    list: [],
+    list: list
   },
   reducers: {
     addPlace: (state, action) => {
