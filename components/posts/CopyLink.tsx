@@ -9,8 +9,8 @@ const CopyLink = ({ id }: { id: string }) => {
 
   let copyLink: string;
 
-  if (process.env.VERCEL_URL) {
-    copyLink = "https://" + process.env.VERCEL_URL + "/tour/" + id;
+  if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+    copyLink = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/tour/" + id;
   } else {
     copyLink = "http://localhost:3000" + "/tour/" + id;
   }

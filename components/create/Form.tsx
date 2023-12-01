@@ -38,8 +38,8 @@ const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
 
     let link;
 
-    if (process.env.VERCEL_URL) {
-      link = "https://" + process.env.VERCEL_URL + `api/textSearch/${queryValue}`;
+    if (process.env.NEXT_PUBLIC_VERCEL_URL) {
+      link = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + `api/textSearch/${queryValue}`;
     } else {
       link = `http://localhost:3000/api/textSearch/${queryValue}`;
     }
