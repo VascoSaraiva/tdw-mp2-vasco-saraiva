@@ -42,8 +42,8 @@ const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
     setTextSearchApiResults(data);
   }
 
-  function handleChosenPlaceId(place: any) {
-    setChosenPlaceId(place.place_id);
+  function handleChosenPlaceId(id: string) {
+    setChosenPlaceId(id);
   }
 
   function handleAddPlace(id: string) {
@@ -87,7 +87,7 @@ const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
                     className="cursor-pointer px-6 hover:bg-gray-100 py-2"
                     key={place.place_id}
                     value={place.name}
-                    onClick={() => handleChosenPlaceId(place)}
+                    onClick={() => handleChosenPlaceId(place.place_id)}
                   >
                     {place.name}
                   </Combobox.Option>

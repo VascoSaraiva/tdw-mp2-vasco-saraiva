@@ -67,26 +67,6 @@ export interface PlaceTextSearchResult {
   place_id: string;
 }
 
-export interface AddPlaceProps {
-  id: string;
-}
-
-export interface StarsRatingProps {
-  rating: number;
-}
-
-export interface PlaceSlotProps {
-  index: number;
-}
-
-export interface PlaceFormProps {
-  index: number;
-}
-
-export interface PlaceCardProps {
-  id: string | null;
-}
-
 export interface FormProps {
   numberOfPlaces: number;
   setShowForm: React.Dispatch<SetStateAction<boolean>>;
