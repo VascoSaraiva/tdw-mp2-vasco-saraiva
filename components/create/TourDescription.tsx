@@ -1,17 +1,15 @@
-import { saveDescription } from '@/redux/slices/tourDetails'
-import React, { useRef } from 'react'
-import { useDispatch } from 'react-redux'
+import { saveDescription } from "@/redux/slices/tourDetails";
+import React, { useRef } from "react";
+import { useDispatch } from "react-redux";
 
 const TourDescription = () => {
-
-  const txtAreaRef = useRef(null)
-  const dispatch = useDispatch()
+  const txtAreaRef = useRef(null);
+  const dispatch = useDispatch();
 
   function handleSaveDescription() {
     if (txtAreaRef.current)
-      dispatch(saveDescription(txtAreaRef.current['value']))
+      dispatch(saveDescription(txtAreaRef.current["value"]));
   }
-
 
   return (
     <div className="flex flex-col gap-2.5">
@@ -26,7 +24,7 @@ const TourDescription = () => {
         placeholder="What is it about?"
       />
     </div>
-  )
-}
+  );
+};
 
-export default TourDescription
+export default TourDescription;

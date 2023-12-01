@@ -1,22 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const placesSlice = createSlice({
-    name: 'place',
-    initialState: {
-        list: [],
+  name: "place",
+  initialState: {
+    list: [],
+  },
+  reducers: {
+    addPlace: (state, action) => {
+      state.list.push(action.payload);
     },
-    reducers: {
-        addPlace: (state, action) => {
-            state.list.push(action.payload)
-        },
 
-        removePlace: (state, action) => {
-            const index = state.list.indexOf(action.payload)
-            state.list.splice(index, 1)
-        }
-    }
-})
+    removePlace: (state, action) => {
+      const index = state.list.indexOf(action.payload);
+      state.list.splice(index, 1);
+    },
+  },
+});
 
-export const { addPlace, removePlace } = placesSlice.actions
+export const { addPlace, removePlace } = placesSlice.actions;
 
-export default placesSlice.reducer
+export default placesSlice.reducer;

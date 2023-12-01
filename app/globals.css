@@ -11,7 +11,7 @@ body {
 }
 
 .modal {
-  @apply absolute left-0 right-0 mx-auto max-w-[342px] rounded-3xl top-[86px] outline outline-2 outline-gray-300 p-[24px] z-10 bg-white shadow-md w-full flex flex-col gap-[18px] ;
+  @apply absolute left-0 right-0 mx-auto max-w-[342px] rounded-3xl top-[86px] outline outline-2 outline-gray-300 p-[24px] z-10 bg-white shadow-md w-full flex flex-col gap-[18px];
 }
 
 .input {
@@ -26,19 +26,18 @@ body {
   @apply text-xl text-black font-semibold;
 }
 
-.addMoreTagsButton{
-  @apply px-4 py-3 rounded-md border-2 border-gray-300 focus:outline-none bg-gray-100 text-gray-400 flex justify-center w-full border-dashed
+.addMoreTagsButton {
+  @apply px-4 py-3 rounded-md border-2 border-gray-300 focus:outline-none bg-gray-100 text-gray-400 flex justify-center w-full border-dashed;
 }
 
-.tagButton{
-  @apply w-full flex justify-between  border-gray-200 border-2 text-gray-400 px-4 py-3 rounded-md
+.tagButton {
+  @apply w-full flex justify-between  border-gray-200 border-2 text-gray-400 px-4 py-3 rounded-md;
 }
 
-.confirmedTagButton{
-  @apply w-full flex justify-between bg-indigo-50 border-indigo-400 border-2 text-indigo-400 px-4 py-3 rounded-md gap-2
+.confirmedTagButton {
+  @apply w-full flex justify-between bg-indigo-50 border-indigo-400 border-2 text-indigo-400 px-4 py-3 rounded-md gap-2;
 }
 
 .publishButton {
-  @apply mx-auto max-w-[342px] w-full my-6 shadow-md py-3 px-4 bg-indigo-500 rounded-full text-white
+  @apply mx-auto max-w-[342px] w-full my-6 shadow-md py-3 px-4 bg-indigo-500 rounded-full text-white;
 }
-

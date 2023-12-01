@@ -3,7 +3,6 @@ import SearchItem from "./SearchItem";
 import UserItem from "./UserItem";
 
 const Navbar = () => {
-
   return (
     <div className="navbar">
       <MenuItem />

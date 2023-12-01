@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -23,7 +23,6 @@ export default function RootLayout({
           <Navbar />
           {children}
         </Provider>
-
       </body>
     </html>
   );

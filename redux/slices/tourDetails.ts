@@ -1,21 +1,21 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const tourDetailsSlice = createSlice({
-    name: 'details',
-    initialState: {
-        title: null,
-        description: null,
+  name: "details",
+  initialState: {
+    title: null,
+    description: null,
+  },
+  reducers: {
+    saveTitle: (state, action) => {
+      state.title = action.payload;
     },
-    reducers: {
-        saveTitle: (state, action) => {
-            state.title = action.payload
-        },
-        saveDescription: (state, action) => {
-            state.description = action.payload
-        },
-    }
-})
+    saveDescription: (state, action) => {
+      state.description = action.payload;
+    },
+  },
+});
 
-export const { saveTitle, saveDescription} = tourDetailsSlice.actions
+export const { saveTitle, saveDescription } = tourDetailsSlice.actions;
 
-export default tourDetailsSlice.reducer
+export default tourDetailsSlice.reducer;
