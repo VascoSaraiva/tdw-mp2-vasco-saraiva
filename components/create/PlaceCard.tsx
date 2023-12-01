@@ -15,7 +15,7 @@ const PlaceCard = ({ id }: { id: string }) => {
       let link;
 
       if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-        link = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + `api/placeDetails/${id}`;
+        link = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
       } else {
         link = `http://localhost:3000/api/placeDetails/${id}`;
       }
