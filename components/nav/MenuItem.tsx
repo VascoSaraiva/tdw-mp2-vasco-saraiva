@@ -27,7 +27,7 @@ const MenuItem = () => {
 
         <Menu.Item>
           <Link
-            href={session ? "/create" : "/auth"}
+            href={session ? "/create" : "/create"}
             className="flex items-center gap-2"
           >
             <AutoAwesomeIcon className="text-indigo-500" />
