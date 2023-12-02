@@ -6,7 +6,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const MenuItem = () => {
   const { data: session } = useSession();
@@ -27,7 +27,7 @@ const MenuItem = () => {
 
         <Menu.Item>
           <Link
-            href={session ? "/create" : "/create"}
+            href={session ? "/create" : "/auth"}
             className="flex items-center gap-2"
           >
             <AutoAwesomeIcon className="text-indigo-500" />
@@ -35,17 +35,13 @@ const MenuItem = () => {
           </Link>
         </Menu.Item>
 
-        <Menu.Item>
-          {session ? (
-            <button onClick={() => signOut()} className="text-rose-500 flex">
-              Sign out -{">"}
-            </button>
-          ) : (
-            <Link href={"/auth"} className="normalButton">
-              Login or Register
-            </Link>
-          )}
-        </Menu.Item>
+        {!session && (
+          <Menu.Item>
+              <Link href={"/auth"} className="normalButton">
+                Login or Register
+              </Link>
+          </Menu.Item>
+        )}
       </Menu.Items>
     </Menu>
   );

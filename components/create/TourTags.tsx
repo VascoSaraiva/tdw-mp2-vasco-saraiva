@@ -8,7 +8,7 @@ import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
 const TourTags = () => {
   const dispatch = useAppDispatch();
-  const tags = useAppSelector((state) => state.tags);
+  const tagsList = useAppSelector((state) => state.tags.list);
 
   function handleSelectedTag(interest: string, tagId: string) {
     dispatch(
@@ -24,22 +24,22 @@ const TourTags = () => {
   }
 
   useEffect(() => {
-    tags.length == 0 && dispatch(addNewBox());
-  }, [tags, dispatch]);
+    tagsList.length == 0 && dispatch(addNewBox());
+  }, [tagsList, dispatch]);
 
   let items: string[] = [];
 
-  tags.map((tag) => tag.tagName != null && items.push(tag.tagName));
+  tagsList.map((tag) => tag.tagName != null && items.push(tag.tagName));
 
   let availableTags = allTags.filter(
-    (item) => !tags.some((tag) => item === tag.tagName),
+    (item) => !tagsList.some((tag) => item === tag.tagName),
   );
 
   return (
     <div className="flex flex-col gap-2.5">
       <p>What is this tour about?</p>
 
-      {tags.map((tag) => (
+      {tagsList.map((tag) => (
         <Menu key={tag.tagId}>
           <div className="relative">
             <Menu.Button
@@ -55,7 +55,7 @@ const TourTags = () => {
               ) : (
                 <>
                   Choose a tag
-                  {tags.length > 1 ? (
+                  {tagsList.length > 1 ? (
                     <DeleteOutlinedIcon
                       onClick={() => handleDeleteTag(tag.tagId)}
                     />
@@ -82,12 +82,12 @@ const TourTags = () => {
         </Menu>
       ))}
 
-      {tags.length < 5 && (
+      {tagsList.length < 5 && (
         <button
           className="addMoreTagsButton"
           onClick={() => dispatch(addNewBox())}
         >
-          Add more tags
+          Add more tagsList
         </button>
       )}
     </div>

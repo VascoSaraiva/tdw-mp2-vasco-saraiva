@@ -17,9 +17,12 @@ export const postSubmissionSlice = createSlice({
     errorOcurred: (state) => {
         state.value= 'error'
     },
+    resetSubmission : (state) => {
+      return { value : 'idle'}
+    },
   },
 });
 
-export const { isLoading, isSuccessful, errorOcurred } = postSubmissionSlice.actions;
+export const { isLoading, isSuccessful, errorOcurred, resetSubmission } = postSubmissionSlice.actions;
 
 export default postSubmissionSlice.reducer;

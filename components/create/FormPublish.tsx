@@ -1,5 +1,8 @@
 import { useAppSelector } from "@/redux/hooks";
-import { errorOcurred, isLoading, isSuccessful } from "@/redux/slices/postSubmissionSlice";
+import { resetPlaces } from "@/redux/slices/placesSlice";
+import { errorOcurred, isLoading, isSuccessful, resetSubmission } from "@/redux/slices/postSubmissionSlice";
+import { resetTags } from "@/redux/slices/tagsSlice";
+import { resetDetails } from "@/redux/slices/tourDetails";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -19,7 +22,7 @@ const FormPublish = () => {
     authorPhoto: session?.user?.image,
     title: useAppSelector((state) => state.details.title),
     desc: useAppSelector((state) => state.details.description),
-    tags: useAppSelector((state) => state.tags),
+    tags: useAppSelector((state) => state.tags.list),
     places: addedPlaces,
   };
 
@@ -52,9 +55,14 @@ const FormPublish = () => {
       if (status === 200) {
         dispatch(isSuccessful())
         setTimeout(() => {
-
-          router.push('/')
-        }, 1000
+          setTimeout(() => {
+            dispatch(resetDetails())
+            dispatch(resetTags())
+            dispatch(resetPlaces())
+            dispatch(resetSubmission())
+            router.push('/')
+          }, 1000)
+        }, 500
         )
       } else {
         dispatch(errorOcurred())

@@ -5,13 +5,18 @@ import StarBorderIcon from "@mui/icons-material/StarBorder";
 const StarsRating = ({ rating }: StarsRatingProps) => {
   let reviewStars = [];
 
-  for (let i = 0; i < 5; i++) {
-    if (i < rating) {
-      reviewStars.push(<StarIcon key={i} fontSize="small" />);
-    } else {
-      reviewStars.push(<StarBorderIcon key={i} fontSize="small" />);
+  if(rating){
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        reviewStars.push(<StarIcon className="text-yellow-400" key={i} fontSize="small" />);
+      } else {
+        reviewStars.push(<StarBorderIcon className="text-yellow-400" key={i} fontSize="small" />);
+      }
     }
+  }else{
+    reviewStars.push(<p className="text-sm">No</p>)
   }
+  
 
   return <>{reviewStars}</>;
 };

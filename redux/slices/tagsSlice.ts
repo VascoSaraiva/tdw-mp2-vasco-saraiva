@@ -3,32 +3,43 @@ import { v4 as uuidv4 } from "uuid";
 
 export const tagsSlice = createSlice({
   name: "tags",
-  initialState: [
-    {
-      tagId: uuidv4(),
-      tagName: null,
-    },
-  ],
+  initialState: {
+    list: [
+      {
+        tagId: uuidv4(),
+        tagName: null,
+      },
+    ],
+  },
   reducers: {
     addNewBox: (state) => {
-      state.push({
+      state.list.push({
         tagId: uuidv4(),
         tagName: null,
       });
     },
-    removeBox: (state, action) =>
-      state.filter((tag) => tag.tagId !== action.payload),
+    removeBox: (state, action) => {
+      state.list.filter((tag) => tag.tagId !== action.payload)
+    },
     addTag: (state, action) => {
-      const boxToUpdate = state.find(
+      const boxToUpdate = state.list.find(
         (object) => object.tagId === action.payload.tagId,
-      );
+      )
       if (boxToUpdate) {
         boxToUpdate.tagName = action.payload.selectedInterest;
       }
     },
+    resetTags: (state) => {
+      state.list = [
+        {
+          tagId: uuidv4(),
+          tagName: null,
+        },
+      ]
+    }
   },
 });
 
-export const { addNewBox, addTag, removeBox } = tagsSlice.actions;
+export const { addNewBox, addTag, removeBox, resetTags } = tagsSlice.actions;
 
 export default tagsSlice.reducer;
