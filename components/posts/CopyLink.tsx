@@ -7,7 +7,7 @@ import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 const CopyLink = ({ id }: { id: string }) => {
   let [isCopied, setIsCopied] = useState(false);
 
-  let copyLink: string = process.env.NEXT_PUBLIC_VERCEL_URL + "/tour/" + id;
+  let copyLink: string = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/tour/" + id;
   
 
   function handleClick() {

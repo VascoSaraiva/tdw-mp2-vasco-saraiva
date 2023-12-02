@@ -12,7 +12,7 @@ const PlaceCard = ({ id }: { id: string }) => {
   useEffect(() => {
     const fetchPlaceDetails = async () => {
 
-      let link = process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
+      let link = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
 
 
       const response = await fetch(link);
