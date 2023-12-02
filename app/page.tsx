@@ -19,7 +19,7 @@ export default async function Home() {
 
 
 async function getData(row : number) {
-  const response = await fetch(`https://${process.env.VERCEL_URL}/api/getPosts/${row}`, {cache: 'no-cache'})
+  const response = await fetch(`${process.env.NEXT_VERCEL_URL}/api/getPosts/${row}`, {cache: 'no-cache'})
 
   if (response.status === 200) {
     const data = await response.json()

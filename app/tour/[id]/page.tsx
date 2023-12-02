@@ -7,6 +7,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const data = await getData(params.id)
   
+
   return (
     <section className="flex flex-col gap-6">
       <div className="py-8 px-6 bg-white rounded-3xl flex flex-col gap-5">
@@ -75,7 +76,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
 
 async function getData(id: string) {
-  const response = await fetch(`https://${process.env.VERCEL_URL}/api/getPostDetails/${id}`, { cache: 'no-cache' })
+  const response = await fetch(`${process.env.NEXT_VERCEL_URL}/api/getPostDetails/${id}`, { cache: 'no-cache' })
 
   if (response.status === 200) {
     const data = await response.json()
