@@ -22,7 +22,7 @@ export async function GET(
 
         await Promise.all(
             response.rows.map(async (row: any) => {
-                const responsePlaceDetails = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/placeDetails/${row.places[0]}`, { next: { revalidate: 3600 } })
+                const responsePlaceDetails = await fetch(`${process.env.VERCEL_URL}/api/placeDetails/${row.places[0]}`, { next: { revalidate: 3600 } })
     
                 const dataPlaceDetails = await responsePlaceDetails.json()
                 row.placePhotoURL = dataPlaceDetails.photo
