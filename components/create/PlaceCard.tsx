@@ -18,7 +18,6 @@ const PlaceCard = ({ id }: { id: string }) => {
       const response = await fetch(link);
       const data = await response.json();
       setData(data);
-      console.log(data);
     };
 
     if (id) {

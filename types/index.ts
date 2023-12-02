@@ -41,11 +41,12 @@ interface Place {
 export interface MockDataItem {
   id: string;
   author: string;
-  authorPhoto: string;
+  authorphoto: string;
   title: string;
-  desc: string;
+  description: string;
   tags: Tag[];
   places: Place[];
+  placePhotoURL: string
 }
 
 export interface PlaceDetails {

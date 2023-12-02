@@ -24,7 +24,7 @@ export async function GET(
     const data = await response.json();
 
     const handlePhotoUrl = () => {
-      return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${data.result.photos[0].photo_reference}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
+      return `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${data.result.photos[0].photo_reference}&key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}`;
     };
 
     const handleEditorialSummary = () => {
@@ -42,7 +42,7 @@ export async function GET(
     if (data.result.editorial_summary) {
       summary = handleEditorialSummary();
     } else {
-      summary = "../../public/default_place_image.png";
+      summary = "";
     }
 
     let placeDetails = {
