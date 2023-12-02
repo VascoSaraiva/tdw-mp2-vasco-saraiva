@@ -6,8 +6,7 @@ import Link from "next/link";
 export default async function Page({ params }: { params: { id: string } }) {
 
   const data = await getData(params.id)
-  console.log(data)
-
+  
   return (
     <section className="flex flex-col gap-6">
       <div className="py-8 px-6 bg-white rounded-3xl flex flex-col gap-5">
