@@ -21,7 +21,7 @@ export async function GET(
             response.rows.map(async (item: any) => {
               await Promise.all(
                 item.places.map(async (placeId: string, index: number) => {
-                  const newResponse = await fetch("https://" + process.env.NEXT_PUBLIC_VERCEL_URL + '/api/placeDetails/' + placeId);
+                  const newResponse = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL + '/api/placeDetails/' + placeId);
                   const data = await newResponse.json();
                   
                 

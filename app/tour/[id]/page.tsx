@@ -75,7 +75,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 }
 
 async function getData(id: string) {
-  const response = await fetch("https://" + process.env.NEXT_PUBLIC_VERCEL_URL + '/api/getPostDetails/' +id, { cache: 'no-cache' })
+  const response = await fetch(process.env.NEXT_PUBLIC_VERCEL_URL + '/api/getPostDetails/' +id, { cache: 'no-cache' })
 
   if (response.status === 200) {
     const data = await response.json()
