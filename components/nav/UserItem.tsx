@@ -9,6 +9,10 @@ import Link from "next/link";
 const UserItem = () => {
   const { data: session } = useSession();
 
+  function handleSignOut(){
+    signOut({ callbackUrl: 'http://localhost:3000/' })
+  }
+
   return (
     <Menu>
       <Menu.Button className="focus:outline-none flex items-center">
@@ -42,7 +46,7 @@ const UserItem = () => {
             </div>
 
             <Menu.Item>
-              <button onClick={() => signOut()} className="text-rose-500 flex">
+              <button onClick={handleSignOut} className="text-rose-500 flex">
                 Sign out -{">"}
               </button>
             </Menu.Item>

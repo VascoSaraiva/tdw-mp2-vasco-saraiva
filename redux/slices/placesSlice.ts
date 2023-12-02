@@ -16,9 +16,12 @@ export const placesSlice = createSlice({
       const index = state.list.indexOf(action.payload);
       state.list.splice(index, 1);
     },
+    resetPlaces : (state) => {
+      return { list : []}
+    },
   },
 });
 
-export const { addPlace, removePlace } = placesSlice.actions;
+export const { addPlace, removePlace, resetPlaces } = placesSlice.actions;
 
 export default placesSlice.reducer;

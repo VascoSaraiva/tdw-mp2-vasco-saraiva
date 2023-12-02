@@ -12,13 +12,8 @@ const PlaceCard = ({ id }: { id: string }) => {
   useEffect(() => {
     const fetchPlaceDetails = async () => {
 
-      let link;
+      let link = process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
 
-      if (process.env.NEXT_PUBLIC_VERCEL_URL) {
-        link = "https://" + process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
-      } else {
-        link = `http://localhost:3000/api/placeDetails/${id}`;
-      }
 
       const response = await fetch(link);
       const data = await response.json();
@@ -54,7 +49,7 @@ const PlaceCard = ({ id }: { id: string }) => {
         <div className="flex flex-col justify-start w-full text-lg text-white gap-1.5 z-10">
           <h1 className="truncate font-bold ">{data.name}</h1>
           <div className="flex gap-1 items-center">
-            <div className="flex text-yellow-400">
+            <div className="flex">
               <StarsRating rating={data.rating} />
             </div>
             <p className="text-sm font-normal">

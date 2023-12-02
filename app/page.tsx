@@ -2,7 +2,10 @@ import Post from "@/components/posts/PostCard";
 import { mockData } from "@/constants";
 import React, { ReactElement } from "react";
 
-export default function Home() {
+export default async function Home() {
+
+
+
   let content: ReactElement[] = [];
 
   if (mockData.length > 0) {

@@ -1,27 +1,20 @@
 "use client";
 
-import { Provider } from "react-redux";
-import { store } from "@/redux/store";
-import TourTags from "@/components/create/TourTags";
-import TourTitle from "@/components/create/TourTitle";
-import TourDescription from "@/components/create/TourDescription";
-import TourPublish from "@/components/create/TourPublish";
-import TourPlaces from "@/components/create/TourPlaces";
+import ProviderRedux from "@/components/create/ProviderRedux";
+import FormFirstSection from "@/components/create/FormFirstSection";
+import FormSecondSection from "@/components/create/FormSecondSection";
+import FormPublish from "@/components/create/FormPublish";
 
 const Page = () => {
-  return (
-    <Provider store={store}>
-      <div className="flex flex-col gap-6">
-        <div className="bg-white p-6 flex flex-col gap-4 rounded-md shadow-sm">
-          <TourTitle />
-          <TourDescription />
-          <TourTags />
-        </div>
 
-        <TourPlaces />
-        <TourPublish />
+  return (
+    <ProviderRedux>
+      <div className='flex flex-col gap-6'>
+        <FormFirstSection />
+        <FormSecondSection />
+        <FormPublish />
       </div>
-    </Provider>
+    </ProviderRedux>
   );
 };
 

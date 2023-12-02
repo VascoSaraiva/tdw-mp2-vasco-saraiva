@@ -13,9 +13,15 @@ export const tourDetailsSlice = createSlice({
     saveDescription: (state, action) => {
       state.description = action.payload;
     },
+    resetDetails: (state) => {
+      return {
+        title: null,
+        description: null
+      }
+    }
   },
 });
 
-export const { saveTitle, saveDescription } = tourDetailsSlice.actions;
+export const { saveTitle, saveDescription, resetDetails } = tourDetailsSlice.actions;
 
 export default tourDetailsSlice.reducer;
