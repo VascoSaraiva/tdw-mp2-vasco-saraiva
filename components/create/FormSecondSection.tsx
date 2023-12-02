@@ -5,7 +5,9 @@ import { useDispatch } from "react-redux";
 import PlaceCard from "./PlaceCard";
 import AddIcon from "@mui/icons-material/Add";
 
-const TourPlaces = () => {
+const FormSecondSection = () => {
+
+  const submissionState = useAppSelector(state => state.submission.value)
   let savedPlaces = useAppSelector((state) => state.places.list);
   let [placeCards, setPlaceCards] = useState<ReactElement[]>([]);
   let [showForm, setShowForm] = useState<boolean>(false);
@@ -20,7 +22,7 @@ const TourPlaces = () => {
   }, [savedPlaces]);
 
   return (
-    <>
+    <div className={`flex flex-col gap-4 ${submissionState != 'idle' && 'pointer-events-none opacity-40'}`}>
       {placeCards}
 
       {savedPlaces.length === 0 || showForm ? (
@@ -29,15 +31,15 @@ const TourPlaces = () => {
         savedPlaces.length < 10 && (
           <button
             onClick={() => setShowForm(!showForm)}
-            className="px-4 py-3 bg-white rounded-md w-full flex justify-between items-center shadow-sm"
+            className="px-4 py-3  bg-white rounded-md w-full flex justify-between items-center shadow-sm"
           >
             Add another place
             <AddIcon />
           </button>
         )
       )}
-    </>
+    </div>
   );
 };
 
-export default TourPlaces;
+export default FormSecondSection;

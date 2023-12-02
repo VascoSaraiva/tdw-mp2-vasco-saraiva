@@ -18,6 +18,7 @@ export async function GET(
       "key",
       process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string,
     );
+
     const response = await fetch(`${url}`);
 
     const data = await response.json();

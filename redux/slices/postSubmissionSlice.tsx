@@ -1,0 +1,25 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+
+export const postSubmissionSlice = createSlice({
+  name: "submission",
+  initialState: {
+    value: 'idle'
+  },
+  reducers: {
+    isLoading: (state) => {
+        state.value= 'loading'
+    },
+
+    isSuccessful: (state) => {
+        state.value= 'success'
+    },
+    errorOcurred: (state) => {
+        state.value= 'error'
+    },
+  },
+});
+
+export const { isLoading, isSuccessful, errorOcurred } = postSubmissionSlice.actions;
+
+export default postSubmissionSlice.reducer;
