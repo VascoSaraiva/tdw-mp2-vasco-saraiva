@@ -19,3 +19,5 @@ export default async function Home() {
     {content}
     </div>;
 }
+
+export const dynamic = 'force-dynamic'

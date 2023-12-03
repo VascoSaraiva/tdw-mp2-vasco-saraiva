@@ -1,7 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import Form from "./Form";
 import { useAppSelector } from "@/redux/hooks";
-import { useDispatch } from "react-redux";
 import PlaceCard from "./PlaceCard";
 import AddIcon from "@mui/icons-material/Add";
 
