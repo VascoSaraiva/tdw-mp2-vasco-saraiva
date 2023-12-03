@@ -48,7 +48,7 @@ const FormPublish = () => {
       const placesString = JSON.stringify(post.places)
       const encodedPlaces = encodeURIComponent(placesString)
 
-      const response = await fetch(`http://localhost:3000/api/save-post?author=${post.author}&authorPhoto=${post.authorPhoto}&title=${post.title}&desc=${post.desc}&tags=${encodedTags}&places=${encodedPlaces}`)
+      const response = await fetch(`${process.env.NEXT_PUBLIC_PRODUCTION_URL}/api/save-post?author=${post.author}&authorPhoto=${post.authorPhoto}&title=${post.title}&desc=${post.desc}&tags=${encodedTags}&places=${encodedPlaces}`)
       const status = await response.status
       if (status === 200) {
         dispatch(isSuccessful())
