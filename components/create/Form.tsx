@@ -36,7 +36,7 @@ const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
 
   async function fetchApi(queryValue: string) {
 
-    let link : string = process.env.NEXT_PUBLIC_VERCEL_URL + `/api/textSearch/${queryValue}`;
+    let link : string = process.env.NEXT_PUBLIC_PRODUCTION_URL + `/api/textSearch/${queryValue}`;
     
     const response = await fetch(link);
     const data = await response.json();
