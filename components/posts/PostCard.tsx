@@ -23,7 +23,7 @@ const Post = ({ data }: PostProps) => {
           height="0"
           sizes="100vw"
           priority={true}
-          style={{ width: '100%', height: '348px' }}
+          style={{ width: '100%', height: '300px' }}
           alt="Place image"
         />
 
