@@ -36,7 +36,7 @@ export interface PostTypes{
   title: string;
   description: string;
   tags : Tag[];
-  places: string[];
+  places: PlaceDetails[];
   placePhotoURL: string;
 }
 
