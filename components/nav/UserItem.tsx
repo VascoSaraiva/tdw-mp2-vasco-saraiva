@@ -10,7 +10,7 @@ const UserItem = () => {
   const { data: session } = useSession();
 
   function handleSignOut(){
-    signOut({ callbackUrl: 'http://localhost:3000/' })
+    signOut({ callbackUrl: process.env.NEXT_PUBLIC_PRODUCTION_URL })
   }
 
   return (
