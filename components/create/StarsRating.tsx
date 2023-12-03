@@ -2,10 +2,10 @@ import { StarsRatingProps } from "@/types";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 
-const StarsRating = ({ rating }: StarsRatingProps) => {
+const StarsRating = ({ rating, totalReviews }: StarsRatingProps) => {
   let reviewStars = [];
 
-  if(rating){
+  if (rating) {
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
         reviewStars.push(<StarIcon className="text-yellow-400" key={i} fontSize="small" />);
@@ -13,12 +13,21 @@ const StarsRating = ({ rating }: StarsRatingProps) => {
         reviewStars.push(<StarBorderIcon className="text-yellow-400" key={i} fontSize="small" />);
       }
     }
-  }else{
-    reviewStars.push(<p className="text-sm">No</p>)
   }
-  
 
-  return <>{reviewStars}</>;
+
+  return <div className="text-sm flex items-center gap-1">
+
+    {reviewStars.length > 0 && <div>
+      {reviewStars}
+    </div>}
+
+
+    <div className="translate-y-[1.4px]">
+      {totalReviews ? totalReviews + ' reviews' : 'No reviews'}
+    </div>
+
+  </div>;
 };
 
 export default StarsRating;

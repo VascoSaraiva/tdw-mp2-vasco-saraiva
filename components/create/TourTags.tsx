@@ -48,7 +48,7 @@ const TourTags = () => {
               {tag.tagName ? (
                 <>
                   <p className="truncate">{tag.tagName}</p>
-                  <DeleteOutlinedIcon
+                  <DeleteOutlinedIcon className="absolute right-4"
                     onClick={() => handleDeleteTag(tag.tagId)}
                   />
                 </>
@@ -56,7 +56,7 @@ const TourTags = () => {
                 <>
                   Choose a tag
                   {tagsList.length > 1 ? (
-                    <DeleteOutlinedIcon
+                    <DeleteOutlinedIcon className="absolute right-4"
                       onClick={() => handleDeleteTag(tag.tagId)}
                     />
                   ) : (

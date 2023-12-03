@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import ShareIcon from "@mui/icons-material/Share";
 import CheckCircleOutlinedIcon from "@mui/icons-material/CheckCircleOutlined";
 
-const CopyLink = ({ id }: { id: string }) => {
+const CopyLink = ({ id }: { id: number }) => {
   let [isCopied, setIsCopied] = useState(false);
 
-  let copyLink: string = "http://" + process.env.NEXT_PUBLIC_VERCEL_URL + "/tour/" + id;
+  let copyLink: string = process.env.NEXT_PUBLIC_VERCEL_URL + "/tour/" + id;
   
 
   function handleClick() {
@@ -18,21 +18,24 @@ const CopyLink = ({ id }: { id: string }) => {
     }, 5000);
   }
 
-  return (
-    <>
-      {!isCopied ? (
-        <ShareIcon
-          onClick={handleClick}
-          className="text-black cursor-pointer"
-        />
-      ) : (
-        <div className="flex gap-1 items-center text-indigo-500 bg-indigo-100 py-2 px-3 rounded-full">
-          <CheckCircleOutlinedIcon fontSize="small" />
-          <p className="font-semibold text-sm cursor-default">Link Copiado</p>
-        </div>
-      )}
-    </>
-  );
+  if(id){
+    return (
+      <>
+        {!isCopied ? (
+          <ShareIcon
+            onClick={handleClick}
+            className="text-black cursor-pointer"
+          />
+        ) : (
+          <div className="flex gap-1 items-center text-indigo-500 bg-indigo-100 py-2 px-3 rounded-full">
+            <CheckCircleOutlinedIcon fontSize="small" />
+            <p className="font-semibold text-sm cursor-default">Link Copiado</p>
+          </div>
+        )}
+      </>
+    );
+  }
+  
 };
 
 export default CopyLink;

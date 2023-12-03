@@ -12,7 +12,7 @@ const PlaceCard = ({ id }: { id: string }) => {
   useEffect(() => {
     const fetchPlaceDetails = async () => {
 
-      let link = "http://" + process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
+      let link = process.env.NEXT_PUBLIC_VERCEL_URL + `/api/placeDetails/${id}`;
 
 
       const response = await fetch(link);
@@ -36,7 +36,7 @@ const PlaceCard = ({ id }: { id: string }) => {
           backgroundImage: `url(${data.photo})`,
           backgroundSize: "cover",
         }}
-        className="h-[290px] flex flex-col justify-between items-end  py-5 px-6 rounded-xl shadow-md relative"
+        className="h-[290px] flex flex-col justify-between items-end  py-5 px-6 rounded-xl shadow-md relative bg-indigo-100"
       >
         <button
           className="w-10 h-10 flex justify-center items-center rounded-md bg-white shadow-lg"
@@ -45,16 +45,9 @@ const PlaceCard = ({ id }: { id: string }) => {
           <DeleteOutlineIcon className="text-black cursor-pointer" />
         </button>
 
-        <div className="flex flex-col justify-start w-full text-lg text-white gap-1.5 z-10">
+        <div className="flex flex-col justify-start w-full text-lg text-white z-10">
           <h1 className="truncate font-bold ">{data.name}</h1>
-          <div className="flex gap-1 items-center">
-            <div className="flex">
-              <StarsRating rating={data.rating} />
-            </div>
-            <p className="text-sm font-normal">
-              {data.user_ratings_total} Reviews
-            </p>
-          </div>
+          <StarsRating rating={data.rating} totalReviews={data.user_ratings_total} />
         </div>
 
         <div className="h-2/3 bg-gradient-to-t from-indigo-500 rounded-b-xl opacity-80 w-full absolute left-0 bottom-0"></div>

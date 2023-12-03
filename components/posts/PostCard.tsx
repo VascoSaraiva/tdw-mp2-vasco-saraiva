@@ -9,25 +9,22 @@ import CopyLink from "./CopyLink";
 
 const Post = ({ data }: PostProps) => {
 
-
   return (
     <div className="bg-white w-full rounded-3xl shadow-md">
       <Link href={`/tour/${data.id}`} className="relative">
         <Image
-          className="rounded-t-3xl object-cover"
+          className="rounded-t-3xl object-cover bg-indigo-100"
           src={data.placePhotoURL}
+          width="0"
+          height="0"
           sizes="100vw"
-          style={{
-            width: "100%",
-            minHeight: "348px",
-          }}
-          height={348}
-          width={400}
-          alt="City Image"
+          priority={true}
+          style={{ width: '100%', height: '348px' }}
+          alt="Place image"
         />
 
         <div className="absolute top-3 px-5 py-2.5 left-4 bg-black bg-opacity-40 text-white rounded-full text-sm font-normal">
-          {data.places.length === 1 ? data.places.length + ' Place' : data.places.length + ' Places'} 
+          {data.places.length === 1 ? data.places.length + ' Place' : data.places.length + ' Places'}
         </div>
 
         <div className="absolute top-3 px-5 py-2.5 right-4 bg-black bg-opacity-40 text-white rounded-full text-sm font-normal gap-1 flex items-center justify-center">

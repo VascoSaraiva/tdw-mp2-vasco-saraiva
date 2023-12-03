@@ -80,7 +80,7 @@ const FormPublish = () => {
       {
         submissionState === 'idle' ? 'Save and publish' :
           submissionState === 'loading' ? 'Loading...' :
-            submissionState === 'success' ? 'Post submitted!' :
+            submissionState === 'success' ? 'Post submitted! 🎉' :
               submissionState === 'error' && 'Something happened 😥'
       }
 
