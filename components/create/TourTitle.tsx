@@ -1,10 +1,10 @@
+import { useAppDispatch } from "@/redux/hooks";
 import { saveTitle } from "@/redux/slices/tourDetails";
 import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
 
 const TourTitle = () => {
   const inputRef = useRef(null);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   function handleSaveTitle() {
     if (inputRef.current) dispatch(saveTitle(inputRef.current["value"]));

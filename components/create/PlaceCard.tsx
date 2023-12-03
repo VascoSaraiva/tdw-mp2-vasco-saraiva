@@ -2,12 +2,12 @@ import { PlaceDetails } from "@/types";
 import React, { useEffect, useState } from "react";
 import StarsRating from "./StarsRating";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import { useDispatch } from "react-redux";
 import { removePlace } from "@/redux/slices/placesSlice";
+import { useAppDispatch } from "@/redux/hooks";
 
 const PlaceCard = ({ id }: { id: string }) => {
   let [data, setData] = useState<PlaceDetails>();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchPlaceDetails = async () => {

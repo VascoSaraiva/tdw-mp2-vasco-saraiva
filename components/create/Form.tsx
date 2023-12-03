@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { Combobox } from "@headlessui/react";
-import { useDispatch } from "react-redux";
 import { addPlace } from "@/redux/slices/placesSlice";
 import { FormProps, PlaceTextSearchResult } from "@/types";
+import { useAppDispatch } from "@/redux/hooks";
 
 const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
   const [queryState, setQueryState] = useState<string>("");
@@ -14,7 +14,7 @@ const Form = ({ numberOfPlaces, setShowForm }: FormProps) => {
   const [chosenPlaceId, setChosenPlaceId] = useState<string | null>(null);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   function handleQueryChange(queryValue: string) {
     setQueryState(queryValue);

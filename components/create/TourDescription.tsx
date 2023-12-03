@@ -1,10 +1,10 @@
+import { useAppDispatch } from "@/redux/hooks";
 import { saveDescription } from "@/redux/slices/tourDetails";
 import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
 
 const TourDescription = () => {
   const txtAreaRef = useRef(null);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   function handleSaveDescription() {
     if (txtAreaRef.current)

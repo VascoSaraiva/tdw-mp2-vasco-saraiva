@@ -1,4 +1,4 @@
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { resetPlaces } from "@/redux/slices/placesSlice";
 import { errorOcurred, isLoading, isSuccessful, resetSubmission } from "@/redux/slices/postSubmissionSlice";
 import { resetTags } from "@/redux/slices/tagsSlice";
@@ -6,7 +6,6 @@ import { resetDetails } from "@/redux/slices/tourDetails";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 
 const FormPublish = () => {
 
@@ -14,7 +13,7 @@ const FormPublish = () => {
 
   const addedPlaces = useAppSelector(state => state.places.list);
   const submissionState = useAppSelector(state => state.submission.value)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const router = useRouter()
 
   const post = {
