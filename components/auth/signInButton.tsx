@@ -1,14 +1,19 @@
 import { SignInButtonProps } from "@/types";
 import { signIn } from "next-auth/react";
+import GoogleIcon from '@mui/icons-material/Google';
 
 const SignInButton = ({ providerId }: SignInButtonProps) => {
+
+  console.log(providerId)
+
   return (
     <button
       type="button"
       onClick={() => signIn(providerId, { callbackUrl: "/" })}
-      className="normalButton w-full"
+      className="px-4 py-3 bg-indigo-500 text-white rounded-full border-gray-200 justify-center items-center gap-2 flex"
     >
-      Sign In
+      {providerId === 'google' && <GoogleIcon  />}
+      Sign in with {providerId}
     </button>
   );
 };

@@ -7,6 +7,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import InfoIcon from '@mui/icons-material/Info';
 
 const MenuItem = () => {
   const { data: session } = useSession();
@@ -18,6 +19,10 @@ const MenuItem = () => {
       </Menu.Button>
 
       <Menu.Items className="modal">
+
+        <h1 className="logo">WeTravel.</h1>
+
+
         <Menu.Item>
           <Link href={"/"} className="flex items-center gap-2">
             <HomeRoundedIcon className="text-indigo-500" />
@@ -32,6 +37,13 @@ const MenuItem = () => {
           >
             <AutoAwesomeIcon className="text-indigo-500" />
             Create new tour
+          </Link>
+        </Menu.Item>
+
+        <Menu.Item>
+          <Link href={"/aboutus"} className="flex items-center gap-2">
+            <InfoIcon className="text-indigo-500" />
+            About us
           </Link>
         </Menu.Item>
 

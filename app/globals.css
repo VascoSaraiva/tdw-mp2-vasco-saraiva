@@ -7,7 +7,7 @@ body {
 }
 
 .navbar {
-  @apply bg-white max-w-[342px] mx-auto h-[64px] flex justify-between items-center px-[24px] rounded-full border-2 mt-[16px] border-indigo-500 shadow-md fixed top-0 left-0 right-0 z-10;
+  @apply bg-white max-w-[342px] mx-auto h-[64px] flex justify-between items-center px-[24px] rounded-full mt-[16px] border-gray-300 border-2 shadow-md fixed top-0 left-0 right-0 z-10;
 }
 
 .modal {
@@ -23,7 +23,7 @@ body {
 }
 
 .title {
-  @apply text-xl text-black font-semibold;
+  @apply text-xl text-black font-bold font-poppins;
 }
 
 .addMoreTagsButton {
@@ -40,4 +40,8 @@ body {
 
 .publishButton {
   @apply mx-auto max-w-[342px] w-full my-6 shadow-md py-3 px-4 bg-indigo-500 rounded-full text-white;
+}
+
+.logo{
+  @apply text-indigo-500 font-bold text-2xl font-poppins mb-1
 }

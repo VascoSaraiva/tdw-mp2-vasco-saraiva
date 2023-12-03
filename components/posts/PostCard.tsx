@@ -53,7 +53,7 @@ const Post = ({ data }: PostProps) => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <Link href={`/tour/${data.id}`} className="text-black text-xl font-bold">{data.title}</Link>
+          <Link href={`/tour/${data.id}`} className="title">{data.title}</Link>
           <p className="line-clamp-2 text-neutral-400 font-normal text-sm">
             {data.description}
           </p>
