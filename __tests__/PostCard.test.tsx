@@ -10,9 +10,19 @@ const mockData = [
         title: 'Best places in Aveiro',
         description: 'Truly the best places.',
         tags: [
-            { "tagId": "1234", "tagName": "Activities for Couples" },
+            '{ "tagId": "1234", "tagName": "Activities for Couples" }',
         ],
-        places: ['ChIJLw5oduI5jkcRGZwswAL1gXc'],
+        places: [
+            {
+                place_id: '1',
+                name: 'Praia',
+                rating: 5,
+                url: 'url',
+                user_ratings_total: 5,
+                photo: 'url',
+                editorial_summary: 'text',
+            }
+        ],
         placePhotoURL: '/default_place_image.png'
     },
     {
@@ -22,9 +32,19 @@ const mockData = [
         title: 'Best places in Lisboa',
         description: 'Truly the best places.',
         tags: [
-            { "tagId": "1234", "tagName": "Outdoor" },
+            '{ "tagId": "1234", "tagName": "Outdoor" }',
         ],
-        places: ['ChIJLw5oduI5jkcRGZwswAL1gXc'],
+        places: [
+            {
+                place_id: '1',
+                name: 'Praia',
+                rating: 5,
+                url: 'url',
+                user_ratings_total: 5,
+                photo: 'url',
+                editorial_summary: 'text',
+            }
+        ],
         placePhotoURL: '/default_place_image.png'
     },
     {
@@ -34,9 +54,19 @@ const mockData = [
         title: 'Best places in Aveiro',
         description: 'Truly the best places.',
         tags: [
-            { "tagId": "1234", "tagName": "Bike" },
+            '{ "tagId": "1234", "tagName": "Bike" }',
         ],
-        places: ['ChIJLw5oduI5jkcRGZwswAL1gXc'],
+        places: [
+            {
+                place_id: '1',
+                name: 'Praia',
+                rating: 5,
+                url: 'url',
+                user_ratings_total: 5,
+                photo: 'url',
+                editorial_summary: 'text',
+            }
+        ],
         placePhotoURL: '/default_place_image.png'
     }
 

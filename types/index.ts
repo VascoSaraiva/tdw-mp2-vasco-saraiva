@@ -4,19 +4,9 @@ export interface SignInButtonProps {
   providerId: string;
 }
 
-interface Tag {
+export interface Tag {
   tagId: string;
   tagName: string;
-}
-
-interface Place {
-  place_id: string;
-  name: string;
-  editorial_summary: string;
-  user_ratings_total: number;
-  rating: number;
-  photo: string;
-  url: string;
 }
 
 export interface PlaceDetails {
@@ -35,7 +25,7 @@ export interface PostTypes{
   authorphoto: string;
   title: string;
   description: string;
-  tags : Tag[];
+  tags : string[];
   places: PlaceDetails[];
   placePhotoURL: string;
 }

@@ -3,11 +3,15 @@
 import Image from "next/image";
 import React from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { PostProps } from "@/types";
+import { PostProps, Tag } from "@/types";
 import Link from "next/link";
 import CopyLink from "./CopyLink";
 
 const Post = ({ data }: PostProps) => {
+  
+  let tags : Tag[] = []
+
+  data.tags.map(tag => tags.push(JSON.parse(tag)))
 
   return (
     <div className="bg-white w-full rounded-3xl shadow-md">
@@ -19,7 +23,7 @@ const Post = ({ data }: PostProps) => {
           height="0"
           sizes="100vw"
           priority={true}
-          style={{ width: '100%', height: '348px' }}
+          style={{ width: '100%', height: '300px' }}
           alt="Place image"
         />
 
@@ -55,6 +59,15 @@ const Post = ({ data }: PostProps) => {
             {data.description}
           </p>
         </div>
+        
+
+        <div className='flex gap-3 scrollbar-hide overflow-scroll'>
+                    {tags.map(tag => (
+                        <div key={tag.tagId} className='text-sm whitespace-nowrap py-2 px-4 w-fit bg-indigo-100  text-indigo-400 rounded-lg'>
+                            <p>{tag.tagName}</p>
+                        </div>
+                    ))}
+                </div>
       </div>
     </div>
   );
