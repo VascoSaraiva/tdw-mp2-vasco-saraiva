@@ -9,7 +9,12 @@ export default async function Home() {
   let content: ReactElement[] = [];
 
   if (data && data.length > 0) {
-    data.map((post: PostTypes) => {
+
+    const sortedData = data.sort(function (a, b) {
+      return b.id - a.id
+    });
+
+    sortedData.map((post: PostTypes) => {
       content.push(<Post key={post.id} data={post} />);
     });
   }
@@ -17,7 +22,7 @@ export default async function Home() {
 
   return <div className="mt-6 flex flex-col gap-6">
     {content}
-    </div>;
+  </div>;
 }
 
 export const dynamic = 'force-dynamic'
