@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav/Navbar";
 import Provider from "@/components/auth/Provider";
@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   description: "Create and share travel itineraries and place recomendations.",
 };
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ["400", "600"],
+  variable: "--font-poppins",
+})
+
+
 export default function RootLayout({
   children,
 }: {
@@ -18,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} ${poppins.variable}`}>
         <Provider>
           <Navbar />
           {children}
