@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { list } from "postcss";
 import { v4 as uuidv4 } from "uuid";
 
 export const tagsSlice = createSlice({
@@ -19,7 +20,10 @@ export const tagsSlice = createSlice({
       });
     },
     removeBox: (state, action) => {
-      state.list.filter((tag) => tag.tagId !== action.payload)
+      let updatedList = state.list.filter((tag) => tag.tagId !== action.payload)
+      return {
+        list: updatedList
+      }
     },
     addTag: (state, action) => {
       const boxToUpdate = state.list.find(

@@ -10,6 +10,7 @@ import {
 } from "next-auth/react";
 import { signOut } from "next-auth/react";
 import { BuiltInProviderType } from "next-auth/providers/index";
+import Image from "next/image";
 
 
 const Page = () => {
@@ -33,7 +34,17 @@ const Page = () => {
   }, [, session]);
 
   return (
-    <section className="bg-white p-6 rounded-3xl py-12 shadow-md flex flex-col gap-3 ">
+    <section className="bg-white p-6 rounded-3xl pt-6 pb-12 shadow-md flex flex-col gap-3 ">
+
+      <Image
+        src={'/auth_image.png'}
+        width={0}
+        height={0}
+        alt='Person looking at the horizon'
+        sizes="100vw"
+        className="w-auto"
+        priority={true}
+      />
 
       <p className="logo">WeTravel.</p>
       <h1 className="text-3xl font-poppins font-bold">Share your <br />  travelling ideas.</h1>

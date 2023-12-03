@@ -4,8 +4,6 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 const SignInButton = ({ providerId }: SignInButtonProps) => {
 
-  console.log(providerId)
-
   return (
     <button
       type="button"

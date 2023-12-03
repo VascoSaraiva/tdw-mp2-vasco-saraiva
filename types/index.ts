@@ -1,24 +1,5 @@
 import { SetStateAction } from "react";
 
-export interface Sessionn {
-  expires: string;
-  user: {
-    email: string;
-    image: string;
-    name: string;
-  };
-}
-
-export interface MenuProps {
-  icon: any;
-  content: React.ReactNode;
-}
-
-export interface ItemContentProps {
-  typeOfItem: string;
-  session?: any;
-}
-
 export interface SignInButtonProps {
   providerId: string;
 }
@@ -38,17 +19,6 @@ interface Place {
   url: string;
 }
 
-export interface MockDataItem {
-  id: string;
-  author: string;
-  authorphoto: string;
-  title: string;
-  description: string;
-  tags: Tag[];
-  places: Place[];
-  placePhotoURL: string
-}
-
 export interface PlaceDetails {
   place_id: string;
   name: string;
@@ -59,8 +29,15 @@ export interface PlaceDetails {
   editorial_summary: string;
 }
 
-export interface PostProps {
-  data: MockDataItem;
+export interface PostTypes{
+  id : number;
+  author: string;
+  authorphoto: string;
+  title: string;
+  description: string;
+  tags : Tag[];
+  places: PlaceDetails[];
+  placePhotoURL: string;
 }
 
 export interface PlaceTextSearchResult {
@@ -69,10 +46,15 @@ export interface PlaceTextSearchResult {
 }
 
 export interface StarsRatingProps {
-  rating: number;
+  rating?: number;
+  totalReviews?: number
 }
 
 export interface FormProps {
   numberOfPlaces: number;
   setShowForm: React.Dispatch<SetStateAction<boolean>>;
+}
+
+export interface PostProps {
+  data : PostTypes
 }
